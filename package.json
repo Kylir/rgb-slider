@@ -1,0 +1,15 @@
+{
+  "name": "rgb-slider",
+  "version": "0.0.1",
+  "description": "Control a RGB LED with 3 sliders on a webpage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Forest",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.11.2",
+    "pi-blaster.js": "0.0.2"
+  }
+}
