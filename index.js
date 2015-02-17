@@ -7,9 +7,9 @@ var piblaster = {setPwm:function(pin, value){console.log("piblaster - pin: "+pin
 var path = require('path');
 var app = express();
 
-var RED_GPIO_PIN = xx;
-var GREEN_GPIO_PIN = xx;
-var BLUE_GPIO_PIN = xx;
+var RED_GPIO_PIN = 17;
+var GREEN_GPIO_PIN = 18;
+var BLUE_GPIO_PIN = 22;
 
 
 //Serve public content - the main page
@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/red/:value', function (req, res) {
     console.log("red = " + req.params.value);
     var redValue = req.params.value;
-    if( isNumber(redValue) ){
+    if( !isNaN( parseInt(redValue) ) ){
         piblaster.setPwm(RED_GPIO_PIN, redValue/255);
         res.send('ok');
     } else {
@@ -30,7 +30,7 @@ app.get('/red/:value', function (req, res) {
 app.get('/green/:value', function (req, res) {
     console.log("green = " + req.params.value);
     var greenValue = req.params.value;
-    if( isNumber(greenValue) ){
+    if( !isNaN( parseInt(greenValue) ) ){
         piblaster.setPwm(GREEN_GPIO_PIN, greenValue/255);
         res.send('ok');
     } else {
@@ -41,7 +41,7 @@ app.get('/green/:value', function (req, res) {
 app.get('/blue/:value', function (req, res) {
     console.log("blue = " + req.params.value);
     var blueValue = req.params.value;
-    if( isNumber(blueValue) ){
+    if( !isNaN( parseInt(blueValue) ) ){
         piblaster.setPwm(BLUE_GPIO_PIN, blueValue/255);
         res.send('ok');
     } else {
