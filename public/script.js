@@ -44,7 +44,6 @@ $(function() {
     $.get( "/green/"+ greenValue , function() {});
   }});
 
-
   $( "#blue" ).slider({change: function( event, ui ) {
     var blueValue = $( "#blue" ).slider( "value" );
     $.get( "/blue/"+ blueValue , function() {});
