@@ -1,9 +1,7 @@
 /* jshint undef: true, node: true */
 
 var express = require('express');
-//var piblaster = require('pi-blaster.js');
-//Mock it for test
-var piblaster = {setPwm:function(pin, value){console.log("piblaster - pin: "+pin+", value: "+value);}};
+var piblaster = require('pi-blaster.js');
 var path = require('path');
 var app = express();
 
@@ -12,10 +10,13 @@ var GREEN_GPIO_PIN = 18;
 var BLUE_GPIO_PIN = 22;
 
 
-//Serve public content - the main page
+//Serve public content - basically any file in the public folder will be available on the server.
 app.use(express.static(path.join(__dirname, 'public')));
 
-//We need 3 services - Red, Green and Blue
+//We also need 3 services - Red, Green and Blue.
+// Each section is doing exactly the same but for a particular color.
+// First, we grab the value and if it is an integer we are dividing it by 255 and sending it to the pi-blaster daemon.
+
 app.get('/red/:value', function (req, res) {
     console.log("red = " + req.params.value);
     var redValue = req.params.value;
@@ -49,6 +50,7 @@ app.get('/blue/:value', function (req, res) {
     }
 });
 
+// Start listening on port 3000.
 var server = app.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;
