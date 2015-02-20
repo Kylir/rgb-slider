@@ -54,7 +54,7 @@ This toy application demonstrates that it is not really difficult to have a web 
 
 Also, because it is so easy to build a web application using NodeJS, there are a lot of articles on the subject. Have a look for instance at the Adafruit tutorial [here](https://learn.adafruit.com/node-embedded-development). 
 
-There is another NodeJS module really nice to use to play with the GPIO: [onoff](https://github.com/fivdi/onoff).
+There is another NodeJS module really nice to use to play with the GPIO: [onoff](https://github.com/fivdi/onoff). With this module you can read from the GPIO, opening a lot more possibilities.
 
 ## License
 
