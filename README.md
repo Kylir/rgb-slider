@@ -61,4 +61,4 @@ There is another NodeJS module really nice to use to play with the GPIO: [onoff]
 
 ## License
 
-MIT License: http://adampritchard.mit-license.org/
+MIT License: see LICENSE.txt
